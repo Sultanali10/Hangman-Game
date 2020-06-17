@@ -13,6 +13,7 @@
 		7FD0FCCC249AD6C0002DEB55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD0FCCA249AD6C0002DEB55 /* Main.storyboard */; };
 		7FD0FCCE249AD6C7002DEB55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD0FCCD249AD6C7002DEB55 /* Assets.xcassets */; };
 		7FD0FCD1249AD6C7002DEB55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD0FCCF249AD6C7002DEB55 /* LaunchScreen.storyboard */; };
+		7FD0FCD9249AD8E0002DEB55 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7FD0FCD8249AD8E0002DEB55 /* words.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7FD0FCCD249AD6C7002DEB55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FD0FCD0249AD6C7002DEB55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FD0FCD2249AD6C7002DEB55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FD0FCD8249AD8E0002DEB55 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				7FD0FCC8249AD6C0002DEB55 /* ViewController.swift */,
 				7FD0FCCA249AD6C0002DEB55 /* Main.storyboard */,
 				7FD0FCCD249AD6C7002DEB55 /* Assets.xcassets */,
+				7FD0FCD8249AD8E0002DEB55 /* words.txt */,
 				7FD0FCCF249AD6C7002DEB55 /* LaunchScreen.storyboard */,
 				7FD0FCD2249AD6C7002DEB55 /* Info.plist */,
 			);
@@ -127,6 +130,7 @@
 			files = (
 				7FD0FCD1249AD6C7002DEB55 /* LaunchScreen.storyboard in Resources */,
 				7FD0FCCE249AD6C7002DEB55 /* Assets.xcassets in Resources */,
+				7FD0FCD9249AD8E0002DEB55 /* words.txt in Resources */,
 				7FD0FCCC249AD6C0002DEB55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

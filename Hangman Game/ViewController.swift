@@ -9,10 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var wordsArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        getWords()
+    }
+    
+    func getWords(){
+        if let url = Bundle.main.url(forResource: "words", withExtension: "txt"){
+            if let urlString = try? String(contentsOf: url){
+                for word in urlString.split(separator: "\n") {
+                    wordsArray.append(String(word))
+                }
+            }
+        }
+        
     }
 
 
