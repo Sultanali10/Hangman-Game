@@ -11,6 +11,12 @@ import UIKit
 class ViewController: UIViewController {
     
     var wordsArray = [String]()
+    
+    @IBOutlet var answerLabel: UILabel!
+    @IBOutlet var textField: UITextField!
+    @IBAction func checkPressed(_ sender: UIButton) {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +31,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
     }
-
-
 }
 
