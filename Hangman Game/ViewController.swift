@@ -15,8 +15,10 @@ class ViewController: UIViewController , UITextFieldDelegate {
     var wordCharct = [Character]()
     var jointArrayForLabel = [String]()
     var userCharc: Character?
-    
-    
+    var dashedWord:String?
+    var newAnswer:String?
+    var wordArray = [Character]()
+     
     @IBOutlet var answerLabel: UILabel!
     @IBOutlet var textField: UITextField!
     @IBOutlet var checkButton: UIButton!
@@ -29,10 +31,17 @@ class ViewController: UIViewController , UITextFieldDelegate {
     
     func checkWordAvailable(my newCharch: Character){
         for (position , charc) in word!.enumerated(){
+            var i = 0
             if charc == userCharc {
-            print("positon of \(charc) is \(position) ")
+//            print("positon of \(charc) is \(position)")
+//                print(wordArray)
+                wordArray[position] = charc
+                newAnswer = String(wordArray)
+//                print(newAnswer!)
             }
+            i += 1
         }
+        answerLabel.text = newAnswer
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -77,15 +86,17 @@ class ViewController: UIViewController , UITextFieldDelegate {
             jointArrayForLabel.append("-")
         }
         
-        let joined = jointArrayForLabel.joined()
+         dashedWord = jointArrayForLabel.joined()
         
-        answerLabel.text = joined
+        answerLabel.text = dashedWord
+        newAnswer = dashedWord
+        wordArray = Array(dashedWord!)
         answerLabel.textColor = .red
         answerLabel.layer.borderWidth = 1
         answerLabel.layer.borderColor = UIColor.purple.cgColor
         
         print(wordCharct)
-        print(joined)
+        print(dashedWord!)
     }
     
     func getWords(){
