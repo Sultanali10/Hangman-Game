@@ -8,32 +8,67 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , UITextFieldDelegate {
     
     var wordsArray = [String]()
     var word:String?
     var wordCharct = [Character]()
     var jointArrayForLabel = [String]()
+    var userCharc: Character?
     
     
     @IBOutlet var answerLabel: UILabel!
     @IBOutlet var textField: UITextField!
+    @IBOutlet var checkButton: UIButton!
     @IBAction func checkPressed(_ sender: UIButton) {
-        
+        textField.resignFirstResponder()
+        guard let unwrapedUserCharc = textField.text else {return}
+        userCharc = Character(unwrapedUserCharc.uppercased())
+        checkWordAvailable(my: userCharc!)
     }
+    
+    func checkWordAvailable(my newCharch: Character){
+        for (position , charc) in word!.enumerated(){
+            if charc == userCharc {
+            print("positon of \(charc) is \(position) ")
+            }
+        }
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= 1
+    }
+    
+  func hideKeyboardWhenTappedAround() {
+      let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+      view.addGestureRecognizer(tap)
+
+  }
+
+  @objc func dismissKeyboard() {
+      view.endEditing(true)
+  }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getWords()
         getWordFromArray()
-        
+        hideKeyboardWhenTappedAround()
+        checkButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkPressed)))
+
     }
     
     func getWordFromArray(){
         wordsArray.shuffle()
-        guard let word = wordsArray.first else {return}
-        let upperWord = word.uppercased()
-        
+        guard let worde = wordsArray.first else {return}
+        let upperWord = worde.uppercased()
+        word = upperWord
         for char in upperWord {
             wordCharct.append(char)
         }
@@ -46,6 +81,8 @@ class ViewController: UIViewController {
         
         answerLabel.text = joined
         answerLabel.textColor = .red
+        answerLabel.layer.borderWidth = 1
+        answerLabel.layer.borderColor = UIColor.purple.cgColor
         
         print(wordCharct)
         print(joined)

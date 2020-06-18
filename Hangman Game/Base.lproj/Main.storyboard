@@ -25,6 +25,9 @@
                                 <rect key="frame" x="20" y="331" width="374" height="56"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="t4h-AY-NmK"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ENTER ONLY ONE CHARACTER HERE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BE2-89-hv3">
                                 <rect key="frame" x="20" y="305" width="374" height="18"/>
@@ -73,6 +76,7 @@
                     <navigationItem key="navigationItem" id="TUY-Da-KNb"/>
                     <connections>
                         <outlet property="answerLabel" destination="VGY-9S-yf6" id="Pk6-1U-74T"/>
+                        <outlet property="checkButton" destination="I9k-uV-IYg" id="CKA-u9-UkL"/>
                         <outlet property="textField" destination="I08-15-e9v" id="T2R-x2-Zau"/>
                     </connections>
                 </viewController>
